@@ -22,15 +22,16 @@ from koko_finance import KokoClient
 
 client = KokoClient(api_key=os.environ["KOKO_API_KEY"])
 
-# Compare two cards
+# Compare two cards (fast, <100ms)
 result = client.compare_cards(
     cards=["Chase Sapphire Preferred", "Amex Gold Card"]
 )
-print(result["winner"]["card_name"])
+for card in result["comparison_table"]:
+    print(f"{card['card_name']}: net value ${card['net_value']}/year")
 
 # Best card for dining
 result = client.recommend_card(category="dining")
-print(result["recommended_card"]["card_name"])
+print(result["recommendations"][0]["card_name"])
 
 # Is this card worth renewing?
 result = client.check_renewal(card={"card_name": "Chase Sapphire Reserve"})
