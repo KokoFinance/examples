@@ -13,29 +13,39 @@ from koko_finance import KokoClient
 
 client = KokoClient(api_key=os.environ["KOKO_API_KEY"])
 
-# Without issuer preferences — neutral recommendations
-neutral = client.recommend_card(category="travel")
-print("Neutral recommendation:")
-print(f"  {neutral.get('recommended_card', {}).get('card_name')}")
+# Without issuer preferences — neutral analysis
+neutral = client.analyze_portfolio(
+    cards=[
+        {"card_name": "Chase Sapphire Preferred"},
+        {"card_name": "Amex Gold Card"},
+        {"card_name": "Capital One Venture X"},
+    ],
+    spending={"dining": 500, "travel": 400, "groceries": 300},
+)
+
+print("Neutral portfolio analysis:")
+for card in neutral.get("card_details", []):
+    print(f"  {card.get('name')}: {card.get('verdict')} — {card.get('decision_reason', '')}")
 
 # With issuer preferences — boost Chase cards
-biased = client.recommend_card(
-    category="travel",
+biased = client.analyze_portfolio(
+    cards=[
+        {"card_name": "Chase Sapphire Preferred"},
+        {"card_name": "Amex Gold Card"},
+        {"card_name": "Capital One Venture X"},
+    ],
+    spending={"dining": 500, "travel": 400, "groceries": 300},
     issuer_preferences=[
         {"issuer": "Chase", "weight": 1.5},   # 50% boost to Chase
     ],
 )
+
 print("\nWith Chase preference (1.5x weight):")
-print(f"  {biased.get('recommended_card', {}).get('card_name')}")
+for card in biased.get("card_details", []):
+    print(f"  {card.get('name')}: {card.get('verdict')} — {card.get('decision_reason', '')}")
 
-# Works with portfolio analysis too
-result = client.analyze_portfolio(
-    cards=[{"card_name": "Chase Sapphire Preferred"}],
-    issuer_preferences=[
-        {"issuer": "Chase", "weight": 1.3},
-    ],
-)
-
-# Replacement suggestions will favor Chase products
-for rec in result.get("recommendations", []):
-    print(f"\n  Suggestion: {rec.get('card_name', '')} — {rec.get('reason', '')}")
+# Compare summaries
+neutral_summary = neutral.get("portfolio_summary", {})
+biased_summary = biased.get("portfolio_summary", {})
+print(f"\nNeutral net value: ${neutral_summary.get('net_value', 0)}/year")
+print(f"With Chase boost:  ${biased_summary.get('net_value', 0)}/year")

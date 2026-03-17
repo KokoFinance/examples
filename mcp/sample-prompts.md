@@ -28,6 +28,12 @@ Once you've connected the Koko Finance MCP server to Claude Desktop (see [setup 
 
 > "Should I renew my Amex Platinum or downgrade to the Amex Gold?"
 
+## Card Value Calculator
+
+> "Is the $695 Amex Platinum annual fee worth it if I spend $1,000/month on travel and $500 on dining?"
+
+> "Calculate the value of a card with a $95 annual fee and $200 sign-on bonus, if I spend $2,000/month total."
+
 ## Guided Workflows (Using Built-in Prompts)
 
 Ask Claude to use the built-in prompts for a structured experience:
@@ -37,3 +43,5 @@ Ask Claude to use the built-in prompts for a structured experience:
 > "Use the which-card prompt — I need to buy a laptop"
 
 > "Use the new-card-finder prompt — I'm looking for a new travel card"
+
+> "Use the renewal-check prompt for my Amex Platinum"
