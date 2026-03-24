@@ -50,3 +50,21 @@ result_detailed = client.analyze_portfolio(
 print("\n--- With spending data ---")
 for card in result_detailed.get("card_details", []):
     print(f"  {card.get('card_name')}: net value ${card.get('net_value', 0)}/year")
+
+# With points balances for redemption-aware analysis
+result_with_points = client.analyze_portfolio(
+    cards=[
+        {"card_name": "Chase Sapphire Reserve"},
+        {"card_name": "Amex Gold Card"},
+    ],
+    point_balances=[
+        {"program": "chase_ur", "balance": 80000},
+        {"program": "amex_mr", "balance": 150000},
+    ],
+)
+
+print("\n--- With points balances ---")
+summary = result_with_points.get("portfolio_summary", {})
+print(f"Net value: ${summary.get('net_value', 0)}")
+for card in result_with_points.get("card_details", []):
+    print(f"  {card.get('card_name')}: {card.get('verdict', '')}")

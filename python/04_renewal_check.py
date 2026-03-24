@@ -10,9 +10,17 @@ from koko_finance import KokoClient
 
 client = KokoClient(api_key=os.environ["KOKO_API_KEY"])
 
+## Basic renewal check
 result = client.check_renewal(
     card={"card_name": "Chase Sapphire Reserve"}
 )
+
+## With spending and benefit selections (only selected benefits count at 100%)
+# result = client.check_renewal(
+#     card={"card_name": "Amex Platinum"},
+#     spending={"dining": 400, "travel": 300, "groceries": 500},
+#     benefit_selections=["uber", "airline_fee", "digital_entertainment"]
+# )
 
 print(f"Card: {result.get('card_name')}")
 print(f"Annual fee: ${result.get('annual_fee', 0)}")
