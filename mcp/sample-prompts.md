@@ -22,11 +22,15 @@ Once you've connected the Koko Finance MCP server to Claude Desktop (see [setup 
 
 > "Analyze my wallet: Chase Freedom Unlimited and Discover it. I spend about $400 on groceries, $300 on dining, and $200 on gas per month."
 
+> "I have an Amex Platinum but I only use the Uber cash, Saks credit, and airline fee credit. What's my actual net value?"
+
 ## Renewal Decisions
 
 > "My Chase Sapphire Reserve annual fee is coming up. Is it worth keeping?"
 
 > "Should I renew my Amex Platinum or downgrade to the Amex Gold?"
+
+> "I only use the Uber credit and airline fee credit on my Amex Platinum. Is it still worth the $695 annual fee?"
 
 ## Card Value Calculator
 

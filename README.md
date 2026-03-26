@@ -51,6 +51,7 @@ No spending data required. No portfolio setup. Just card names.
 | [03_analyze_portfolio.py](python/03_analyze_portfolio.py) | Portfolio value breakdown | Beginner |
 | [04_renewal_check.py](python/04_renewal_check.py) | Should you keep this card? | Beginner |
 | [05_issuer_preferences.py](python/05_issuer_preferences.py) | Boost specific card issuers in results | Intermediate |
+| [06_benefit_categories.py](python/06_benefit_categories.py) | Discover benefit keys + use in analysis | Intermediate |
 
 ### curl (no SDK needed)
 

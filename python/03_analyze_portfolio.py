@@ -2,7 +2,7 @@
 Analyze a credit card portfolio.
 
 Pass your cards (just names are enough) and get a full value breakdown.
-Add spending data for more accurate results.
+Add spending data and benefit selections for more accurate results.
 Fast endpoint returns deterministic calculations in <100ms.
 """
 
@@ -50,6 +50,20 @@ result_detailed = client.analyze_portfolio(
 print("\n--- With spending data ---")
 for card in result_detailed.get("card_details", []):
     print(f"  {card.get('card_name')}: net value ${card.get('net_value', 0)}/year")
+
+# With benefit selections (only benefits you use count at 100%)
+# Use client.get_benefit_categories() to discover valid keys
+result_with_benefits = client.analyze_portfolio(
+    cards=[
+        {"card_name": "American Express Platinum Card"},
+    ],
+    spending={"dining": 500, "travel": 300},
+    benefit_selections=["uber", "airline_fee", "digital_entertainment", "saks"],
+)
+
+print("\n--- With benefit selections ---")
+for card in result_with_benefits.get("card_details", []):
+    print(f"  {card.get('card_name')}: net value ${card.get('net_value', 0)}/year — {card.get('verdict', '')}")
 
 # With points balances for redemption-aware analysis
 result_with_points = client.analyze_portfolio(

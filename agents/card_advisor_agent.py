@@ -62,14 +62,19 @@ TOOLS = [
         "type": "function",
         "function": {
             "name": "check_renewal",
-            "description": "Check if a credit card is worth renewing at annual fee time",
+            "description": "Check if a credit card is worth renewing at annual fee time. Pass benefit_selections to specify which benefits the user actually uses (selected count at 100%, unselected at 0%).",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "card_name": {
                         "type": "string",
                         "description": "Name of the card to check",
-                    }
+                    },
+                    "benefit_selections": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Benefit keys the user uses, e.g. ['uber', 'airline_fee', 'dining']",
+                    },
                 },
                 "required": ["card_name"],
             },
@@ -90,7 +95,10 @@ def handle_tool_call(name, args):
     elif name == "recommend_card":
         return koko.recommend_card(category=args["category"])
     elif name == "check_renewal":
-        return koko.check_renewal(card={"card_name": args["card_name"]})
+        return koko.check_renewal(
+            card={"card_name": args["card_name"]},
+            benefit_selections=args.get("benefit_selections"),
+        )
     return {"error": f"Unknown tool: {name}"}
 
 
