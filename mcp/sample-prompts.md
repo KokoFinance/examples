@@ -32,6 +32,18 @@ Once you've connected the Koko Finance MCP server to Claude Desktop (see [setup 
 
 > "I only use the Uber credit and airline fee credit on my Amex Platinum. Is it still worth the $695 annual fee?"
 
+## Merchant Intelligence
+
+> "I'm at Starbucks buying a $35 coffee order. I have a Chase Sapphire Reserve, Amex Gold, and Citi Double Cash. Which card should I use?"
+
+> "Do any of my cards have credits at Saks Fifth Avenue? I have an Amex Platinum and Chase Sapphire Reserve."
+
+> "I'm about to take an Uber. Do any of my cards give me Uber credits? I have an Amex Platinum and Amex Gold."
+
+> "Show me all the credits and benefits on my Amex Platinum — how much is each one worth?"
+
+> "What benefits does the Chase Sapphire Reserve have? List all the credits with their values."
+
 ## Card Value Calculator
 
 > "Is the $695 Amex Platinum annual fee worth it if I spend $1,000/month on travel and $500 on dining?"

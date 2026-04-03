@@ -52,6 +52,9 @@ No spending data required. No portfolio setup. Just card names.
 | [04_renewal_check.py](python/04_renewal_check.py) | Should you keep this card? | Beginner |
 | [05_issuer_preferences.py](python/05_issuer_preferences.py) | Boost specific card issuers in results | Intermediate |
 | [06_benefit_categories.py](python/06_benefit_categories.py) | Discover benefit keys + use in analysis | Intermediate |
+| [07_merchant_which_card.py](python/07_merchant_which_card.py) | Best card at a merchant (auto-detects category) | Beginner |
+| [08_merchant_benefits.py](python/08_merchant_benefits.py) | Check card credits at a merchant | Beginner |
+| [09_card_benefits.py](python/09_card_benefits.py) | All credits/benefits for a card | Beginner |
 
 ### curl (no SDK needed)
 
@@ -60,6 +63,9 @@ No spending data required. No portfolio setup. Just card names.
 | [compare.sh](curl/compare.sh) | Compare cards via raw HTTP |
 | [recommend.sh](curl/recommend.sh) | Get card recommendations |
 | [renewal.sh](curl/renewal.sh) | Check card renewal value |
+| [merchant-which-card.sh](curl/merchant-which-card.sh) | Best card at a merchant |
+| [merchant-benefits.sh](curl/merchant-benefits.sh) | Check card credits at a merchant |
+| [card-benefits.sh](curl/card-benefits.sh) | Get all benefits for a card |
 
 ### MCP Server (for Claude Desktop / AI agents)
 

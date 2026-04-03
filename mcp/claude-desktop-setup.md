@@ -27,7 +27,7 @@ Once connected, you can ask Claude things like:
 - "Is the Amex Platinum worth renewing?"
 - "Recommend a travel card with no annual fee"
 
-## Available MCP Tools
+## Available MCP Tools (11)
 
 | Tool | What It Does |
 |------|-------------|
@@ -39,6 +39,9 @@ Once connected, you can ask Claude things like:
 | `recommend_card_for_category` | Best card for a spending category from your portfolio |
 | `check_card_renewal` | Should you renew this card? Verdict + downgrade/replacement options |
 | `create_mcp_session` | Create a session for multi-tool workflows |
+| `which_card_at_merchant` | Best card at a specific merchant (auto-detects category, e.g. Starbucks → dining) |
+| `check_merchant_benefits` | Check if any cards have credits at a merchant (e.g. Saks → Amex Platinum credit) |
+| `get_card_benefits` | All credits/benefits for a card with value, frequency, schedule |
 
 ## Available MCP Prompts
 
