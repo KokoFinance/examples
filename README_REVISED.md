@@ -109,6 +109,13 @@ print(result["reasoning"])
 | [03_analyze_portfolio.py](python/03_analyze_portfolio.py) | Portfolio value breakdown across multiple cards | Beginner |
 | [04_renewal_check.py](python/04_renewal_check.py) | Should you keep this card or cancel? | Beginner |
 | [05_issuer_preferences.py](python/05_issuer_preferences.py) | Boost specific card issuers in recommendation results | Intermediate |
+| [06_benefit_categories.py](python/06_benefit_categories.py) | List benefit categories and use selections for accurate value | Intermediate |
+| [07_merchant_which_card.py](python/07_merchant_which_card.py) | Best card at a specific merchant (auto-detects category) | Beginner |
+| [08_merchant_benefits.py](python/08_merchant_benefits.py) | Check merchant-specific credits (e.g. Saks → Amex credit) | Beginner |
+| [09_card_benefits.py](python/09_card_benefits.py) | List all credits/benefits for a card with values and schedules | Beginner |
+| [10_card_terms.py](python/10_card_terms.py) | Get Schumer Box data — APR, penalties, fees | Beginner |
+| [11_card_search.py](python/11_card_search.py) | Search cards with structured filters (type, fee, spending) | Intermediate |
+| [12_card_history.py](python/12_card_history.py) | Track card data changes and points program trends | Intermediate |
 
 ### curl (no SDK needed)
 
@@ -117,6 +124,13 @@ print(result["reasoning"])
 | [compare.sh](curl/compare.sh) | Compare cards via raw HTTP |
 | [recommend.sh](curl/recommend.sh) | Get card recommendations |
 | [renewal.sh](curl/renewal.sh) | Check card renewal value |
+| [merchant-which-card.sh](curl/merchant-which-card.sh) | Best card at a specific merchant |
+| [merchant-benefits.sh](curl/merchant-benefits.sh) | Check merchant-specific credits |
+| [card-benefits.sh](curl/card-benefits.sh) | List all benefits for a card |
+| [card-terms.sh](curl/card-terms.sh) | Get Schumer Box data (APR, penalties, fees) |
+| [card-search.sh](curl/card-search.sh) | Search cards with structured filters |
+| [card-history.sh](curl/card-history.sh) | Track card data changes over time |
+| [points-programs.sh](curl/points-programs.sh) | Points program reference data and valuations |
 
 ### MCP Server (for Claude Desktop / AI agents)
 
@@ -163,6 +177,10 @@ Both use the same calculation engine. Same data, same intelligence, same structu
 ✅ **Renewal recommendations** - Keep, downgrade, or replace based on actual value
 ✅ **Category optimization** - Which card maximizes returns for specific spending
 ✅ **Portfolio analysis** - Total value across all cards you own
+✅ **Merchant intelligence** - Best card at a specific merchant + merchant-specific credits
+✅ **Schumer Box data** - Purchase APR, penalty APR, late fees, cash advance fees
+✅ **Card search** - Structured search with filters (type, fee, spending, credit tier)
+✅ **Data history** - Track fee changes, benefit updates, and program valuations over time
 
 **Example:**
 Most sites say "Amex Gold earns 4x on dining."
